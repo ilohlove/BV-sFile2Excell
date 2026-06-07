@@ -2,33 +2,33 @@
 
 ## Project Name
 
-Template Smoke Test
+sFile2Excell
 
 ## Project Slug
 
-Template-Smoke-Test
+sFile2Excell
 
 ## Purpose
 
-Desktop smoke-test app created from the template to verify GUI startup, logging, version metadata, update metadata, and release workflow readiness.
+Desktop tool for scanning a folder of PDF document files, extracting document number, signing date, and Vietnamese summary from filenames, then appending normalized records to an Excel management workbook.
 
 ## Main Features
 
-- Simple CustomTkinter desktop shell.
-- App name and current version display.
-- Check Update action wired to remote raw `latest.json` metadata.
-- Automatic update check shortly after the GUI opens.
-- Update confirmation dialog with version and short changelog summary.
-- Short on-screen log area.
+- Select a folder containing PDF files.
+- Select or create an Excel workbook output.
+- Extract document number, signing date, and summary from PDF filenames.
+- Skip duplicate rows already present in the workbook.
+- Add an English summary column using `translate-rule.xlsx` rules and Google Translate fallback.
+- Keep update check actions from the desktop template.
 
 ## GUI Requirements
 
-- Main screen.
-- App name display.
-- Version display.
-- Check Update button.
-- Update confirmation dialog.
-- Short log area.
+- Main screen with app name and version.
+- Folder picker for the PDF source directory.
+- Excel save picker for the output workbook.
+- Run button with background processing.
+- Check Update button and update confirmation dialog.
+- Short log area with processing summary.
 
 ## Business Rules
 
@@ -38,12 +38,16 @@ Desktop smoke-test app created from the template to verify GUI startup, logging,
 
 ## Input Data
 
-No business input is required for this smoke test.
+- A local folder containing `.pdf` files.
+- Optional `translate-rule.xlsx` with Vietnamese phrases in column A and English replacements in column B.
+- Existing or new `.xlsx` output workbook.
 
 ## Output Data
 
-Short UI log messages and standard application log file entries.
+- Excel workbook named `quan_ly_van_ban.xlsx` by default.
+- Worksheet `Quản lý văn bản`.
+- Columns: `Số`, `Ngày ký`, `Trích yếu nội dung`, `Trích yếu tiếng Anh`, `Người xin số`, `CBTT`, `BBH Liên quan`.
 
 ## Project Notes
 
-Use this file as the main project-specific brief. Keep it short and update it before changing business logic.
+PDF filenames should end with a valid signing date in `ddmmyyyy`, `dd.mm.yyyy`, `dd-mm-yyyy`, or `dd/mm/yyyy` style. Document numbers are parsed from the beginning of the filename when they contain a separator such as `/`, `-`, or `.`.

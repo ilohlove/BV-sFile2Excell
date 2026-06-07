@@ -1,29 +1,51 @@
-# Template Smoke Test
+# BV-sFile2Excell
 
-Desktop smoke-test app created from the Python desktop template. It verifies that the generated project can open a CustomTkinter GUI, read version metadata, write logs, expose update metadata, and stay ready for the documented release workflow.
+CustomTkinter desktop app for converting PDF filenames into an Excel document management workbook.
 
-## App Metadata
+## Purpose
 
-- Project name: Template Smoke Test
-- Project slug: Template-Smoke-Test
-- App name: BV-Template-Smoke-Test
-- Exe name: BV-Template-Smoke-Test.exe
-- latest.json URL: https://raw.githubusercontent.com/ilohlove/BV-Template-Smoke-Test/main/latest.json
+BV-sFile2Excell scans a folder of PDF files, parses document information from each filename, and appends valid records to an Excel workbook named `quan_ly_van_ban.xlsx` by default.
 
 ## Features
 
-- Opens a simple CustomTkinter GUI.
-- Displays app name and current version from `version.json`.
-- Provides a Check Update button using the remote raw `latest.json` URL from `version.json`.
-- Automatically checks for updates after the GUI opens.
-- Shows the new version and a short changelog summary before asking the user to update.
-- Shows short log messages in the UI and writes through the template logger.
+- Folder picker for the PDF source directory.
+- Excel output picker for creating or updating a workbook.
+- Filename parsing for document number, signing date, and Vietnamese summary.
+- Duplicate detection against existing workbook rows.
+- Excel formatting for the `Quản lý văn bản` sheet.
+- English summary generation using `translate-rule.xlsx` rules with Google Translate fallback.
+- Manual Check Update action using the remote raw `latest.json` URL from `version.json`.
+- Automatic update check shortly after the GUI opens.
 
 ## Run From Source
+
+Install dependencies first:
+
+```bat
+pip install -r requirements.txt
+```
+
+Run the app:
 
 ```bat
 python -m app.main
 ```
+
+## Filename Format
+
+The app expects PDF filenames to include:
+
+- A document code at the beginning when available, such as `123/ABC`.
+- A text summary after the document code.
+- A signing date at the end in `ddmmyyyy`, `dd.mm.yyyy`, `dd-mm-yyyy`, or `dd/mm/yyyy` style.
+
+Example:
+
+```text
+123-ABC Thong bao hop dai hoi 07062026.pdf
+```
+
+Optional translation rules can be placed in `translate-rule.xlsx`. Use Vietnamese phrases in column A and English replacements in column B.
 
 ## Build
 

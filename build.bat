@@ -41,6 +41,9 @@ if /I "%UPDATER_BASE:~-4%"==".exe" set "UPDATER_BASE=%UPDATER_BASE:~0,-4%"
 set "ICON_ARGS="
 if exist "assets\icon.ico" set "ICON_ARGS=--icon assets\icon.ico"
 
+set "TRANSLATE_RULE_ARGS="
+if exist "translate-rule.xlsx" set "TRANSLATE_RULE_ARGS=--add-data translate-rule.xlsx;."
+
 if exist build rmdir /s /q build
 if exist dist rmdir /s /q dist
 
@@ -50,6 +53,7 @@ python -m PyInstaller ^
 --windowed ^
 --add-data "version.json;." ^
 --add-data "latest.json;." ^
+%TRANSLATE_RULE_ARGS% ^
 --collect-all customtkinter ^
 --hidden-import tkinter ^
 --hidden-import tkinter.ttk ^

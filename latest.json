@@ -1,9 +1,11 @@
 {
-  "version": "1.0.3",
+  "version": "1.0.0",
   "release_date": "2026-06-07",
-  "download_url": "https://github.com/ilohlove/BV-Template-Smoke-Test/releases/download/v1.0.3/BV-Template-Smoke-Test.exe",
+  "download_url": "",
   "changelog": [
-    "Added automatic update checks, update confirmation, and app download handoff to the updater."
+    "Khởi tạo project sFile2Excell từ template desktop.",
+    "Thêm chức năng quét tên file PDF và ghi dữ liệu quản lý văn bản ra Excel.",
+    "Hỗ trợ dịch trích yếu sang tiếng Anh bằng translate-rule.xlsx và Google Translate."
   ],
   "force_update": false
 }
