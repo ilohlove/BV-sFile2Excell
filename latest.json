@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "release_date": "2026-06-07",
-  "download_url": "",
+  "download_url": "https://github.com/ilohlove/BV-sFile2Excell/releases/download/v1.0.0/BV-sFile2Excell.exe",
   "changelog": [
     "Khởi tạo project sFile2Excell từ template desktop.",
     "Thêm chức năng quét tên file PDF và ghi dữ liệu quản lý văn bản ra Excel.",
