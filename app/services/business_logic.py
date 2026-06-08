@@ -14,7 +14,7 @@ from openpyxl.styles import Alignment, Border, Font, Side
 from openpyxl.utils import get_column_letter
 
 
-DATE_SUFFIX_PATTERN = re.compile(r"[\s_.-]*(\d{2})[./-]?(\d{2})[./-]?(\d{4})$")
+DATE_SUFFIX_PATTERN = re.compile(r"\s+(\d{2})[./-]?(\d{2})[./-]?(\d{4})$")
 DOCUMENT_CODE_PATTERN = re.compile(r"^(?P<code>\d+[^\W_]*(?:[-/.][^\W_]+)+)(?:\s+(?P<content>.*))?$")
 SHEET_NAME = "Quản lý văn bản"
 TRANSLATE_RULE_FILE = "translate-rule.xlsx"

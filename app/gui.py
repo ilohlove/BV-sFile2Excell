@@ -29,6 +29,7 @@ class AppGUI:
         self.output_var = ctk.StringVar(value=str(Path.cwd() / "quan_ly_van_ban.xlsx"))
         self.metadata = metadata
         self.update_check_running = False
+        self.startup_update_check_done = False
         self.task_running = False
 
         self._build_layout(metadata)
@@ -158,6 +159,10 @@ class AppGUI:
         messagebox.showerror("Xử lý thất bại", message, parent=self.root)
 
     def _check_update_on_startup(self):
+        if self.startup_update_check_done:
+            return
+
+        self.startup_update_check_done = True
         self._start_update_check(is_manual=False)
 
     def _check_update(self):

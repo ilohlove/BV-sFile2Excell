@@ -1,11 +1,11 @@
 {
-  "version": "1.0.0",
-  "release_date": "2026-06-07",
-  "download_url": "https://github.com/ilohlove/BV-sFile2Excell/releases/download/v1.0.0/BV-sFile2Excell.exe",
+  "version": "1.0.1",
+  "release_date": "2026-06-08",
+  "download_url": "https://github.com/ilohlove/BV-sFile2Excell/releases/download/v1.0.1/BV-sFile2Excell.exe",
   "changelog": [
-    "Khởi tạo project sFile2Excell từ template desktop.",
-    "Thêm chức năng quét tên file PDF và ghi dữ liệu quản lý văn bản ra Excel.",
-    "Hỗ trợ dịch trích yếu sang tiếng Anh bằng translate-rule.xlsx và Google Translate."
+    "Tu dong quet cap nhat dung mot lan khi mo phan mem.",
+    "Nut Check Update van cho phep nguoi dung kiem tra cap nhat thu cong.",
+    "Chi nhan ngay ky o cuoi ten file PDF sau dau cach, tranh nham ngay nam trong trich yeu."
   ],
   "force_update": false
 }
